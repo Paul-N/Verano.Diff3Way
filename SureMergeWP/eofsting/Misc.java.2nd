@@ -1,0 +1,96 @@
+/*
+ * @(#)Guiffy Misc Components - Misc.java    7-Jan-2001
+ *
+ * Copyright (c) 1998 - 2001  Guiffy Software.  All Rights Reserved.
+ * by: Bill W. Ritcher
+ *
+ */
+
+
+/**
+ * Misc Components for Guiffy
+ *
+ * @version 3.0 3-Jan-2000
+ * @author Bill W. Ritcher
+ */
+public class Misc {
+
+  void WWw_Action( ) {
+    RePaint_Immed();
+    // Action from Help, www - Browser to guiffy.com
+    BrowserControl.displayURL("http://www.guiffy.com/"); 
+ 
+  }
+
+  void Online_Action( ) {
+    RePaint_Immed();
+    // Action from Help, Online - Browser to guiffy.com/help
+    BrowserControl.displayURL("http://www.guiffy.com/hthelp.html"); 
+ 
+  }
+
+  public void About_Action( ) {
+    // Action from Help, About - Show the About Dialog
+    RePaint_Immed();
+    String abts = "Guiffy - GUI diFF & SureMerge 2/3-waY tool\n" +
+                  "             Created by Bill Ritcher\n" +
+                  "Guiffy Software, Inc. - Copyright 1998 - 2003\n" +
+                  "              Guiffy "+GRC.GUIFFY_MAJOR_RELEASE+"." +
+                  GRC.GUIFFY_MINOR_RELEASE+" - Build "+
+                  GRC.GUIFFY_BUILD_NUMBER+"\n\n" +
+                  "Guiffy includes the Jakarta-Regexp package for its\n" +
+                  "Regular Expression functions.  Jakarta-Regexp was developed\n" +
+                  "by the Apache Software Foundation (http://apache.org/).\n\n" +
+                  "Serial No. = {0} {5}\n" +
+                  "System & Java environment information:\n" +
+                  "              On JDK/JRE - {1}\n" +
+                  "              LAF={2}\n" + 
+                  "              OS={3} ({4})\n\n" ;
+    Properties prop = new Properties(System.getProperties() );
+    String Java_Ver = prop.getProperty( "java.version" );
+    String Sernos = "Eval.";
+    if(serial_No > 0) {
+      Sernos = ""+serial_No;
+    }
+    String sup_Status = "Supported";
+
+    Object[] abto = { Sernos, Java_Ver, LAFName , OSName, OSVersion, sup_Status };
+    JOptionPane.showMessageDialog( pcom,
+                                   MessageFormat.format(abts, abto),
+                                   ReBu.grbGet("ad_title") + " Guiffy "+
+                                   GRC.GUIFFY_MAJOR_RELEASE+"."+GRC.GUIFFY_MINOR_RELEASE,
+                                   JOptionPane.INFORMATION_MESSAGE );
+    UIManager.LookAndFeelInfo[] lfInfo = UIManager.getInstalledLookAndFeels();
+    System.out.println("Installed look-and-feels are:");
+    for ( int i = 0; i < lfInfo.length; i++ ) {
+       System.out.println("Name:"+lfInfo[i].getName() +
+                          ", Class:" + lfInfo[i].getClassName() );
+    }
+
+    Runtime rt = Runtime.getRuntime();
+    long fm = rt.freeMemory() / 1024;
+    long tm = rt.totalMemory() / 1024;
+    System.err.println("Free memory(at About_Action)=" + fm + "KB  Total memory=" + tm + "KB");
+
+  } // End of About_Action method 
+
+  void Exit_Action( boolean no_Exit, JFrame fr) {
+
+    // Action from Exit 
+    if(no_Exit == true) {
+        if(fr != null) {
+          fr.dispose();
+        }
+    } else {
+        if(fork_Run == true) {
+          GuiffySS.programQuit();
+          if(fr != null) {
+            fr.dispose();
+          }
+        } else {
+          pcom.setVisible(false);
+        }
+    }
+  } // End of Exit_Action method
+
+} // End of Misc class

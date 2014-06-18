@@ -1,0 +1,683 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<title>Guiffy Release Notes</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+</head>
+
+<body bgcolor="#ffffff">
+
+<h1>Guiffy Release Notes</h1>
+
+<h2>9.4 Release Notes: Build 312 - March 1, 2011</h2>
+             The 9.4 release includes:
+            <UL>
+             <LI><B>SaveAs Unified Diff:</B>
+              <UL>
+               <LI>Replaces SaveAs RCS Diff. 
+               </LI>
+               <LI>Supports specifying number of Context lines, EOL formats, &amp; Encoding format. 
+               </LI>
+               <LI>Jiff non-GUI command line utility -u option added to generate Unified Diff. 
+               </LI>
+               <LI>GuiffyDiff non-GUI API class - setUnified method added to generate Unified Diff. 
+               </LI>
+              </UL>
+             </LI>
+             <LI><B>SureMerge "eat a closer" avoidance:</B>
+              <UL>
+               <LI>Detects matching line(s) at the end of conflicting inserts, Keep Both avoids loosing
+                    any of those matching lines. 
+               </LI>
+               <LI>Implemented in GUI application and APIs &amp; SureMerge non-GUI 
+                    (automation and server-side) application and API. 
+               </LI>
+              </UL>
+             </LI>
+             <LI>SureMerge improved processing with options for Ignored lines.
+             </LI>
+             <LI>SureMerge algorithms improved for large files and differences.
+             </LI>
+             <LI>File and Folder history lists avoid duplicate path entries.  Parent File history list
+                  for SureMerges preserved when merge results saved to different path.
+             </LI>
+             <LI>File and Folder dialogs remember last path used - corrected/improved/extended.
+             </LI>
+             <LI>Upgraded Quaqua FileChooser for latest Snow Leopard LAF on MacOS X.
+             </LI>
+            </UL>
+
+<h2>9.3 Release Notes: Build 293 - September 1, 2010</h2>
+             The 9.3 release includes:
+            <UL>
+	     <LI>Folder Compare performance improved - upto 4x faster.  The Verify
+			files match using Text verify (default) is enhanced to
+			automatically detect binary files and switch to the binary
+			(Byte-by-byte) verify method.
+             </LI>
+	     <LI>Folder Compare archive files improved - added support
+			for Zip64 and 7-Zip formats.
+             </LI>
+	     <LI>Keep/Undo All tool imrpoved. KeepUndoAll action method added in the
+			GuiffyPanel class of the API.  Keep and Undo All actions fixed
+			to avoid issues that were hanging the UI on subsequent editing
+			operations.
+             </LI>
+	     <LI>Java 7 (pre-release) support - Guiffy runtime checks for Java 
+			runtime versions updated to recognize 1.7.
+             </LI>
+	     <LI>Vista and Windows 7 Toolbars improved - removed the button border
+			decorations.
+             </LI>
+             <LI>Bug 411 fixed - Merge result view clipping the background colors in
+			changes prematurely.  This anti-aliasing issue also caused selected
+			lines with tabs to be displayed improperly. 
+             </LI>
+            </UL>
+
+<h2>9.2 Release Notes: Build 284 - June 23, 2010</h2>
+             The 9.2 release includes:
+            <UL>
+             <LI>Improved Attention Views - Compare views for Parent vs 1st or 2nd added for during 
+			3-way auto merges.  Context (right click, popup) menu items added to open compare views
+			showing the Parent vs 1st or 2nd file for the current Attention.
+             </LI>
+             <LI>Improved SureMerge resolutions - 3-way auto merge algorithms improved to avoid "Confused" 
+			cases and reduce the number of Attentions (also known as Conflicts). 
+             </LI>
+             <LI>GuiffyReport utility - nonGUI compare report tool generates HTML compare reports.
+
+             <LI>Open Evaluations - without email.  Fully enabled 21-day evaluations without a temporary
+			license key or email required.  Temporary license keys still available for extended 
+			(beyond 21 days) evaluations.
+             </LI>
+             <LI>Upgraded installer and launcher
+             </LI>
+             <LI>Bugs 409-410 fixed (Refer to BugReports on Guiffy's web site for details)
+             </LI>
+            </UL>
+
+<h2>9.1 Release Notes: Build 280 - February 6, 2010</h2>
+             The 9.1 bug fix release includes:
+            <UL>
+             <LI>Upgraded install and launcher
+                  packages for MaxOS X 10.6 (Snow Leopard) and Windows 7 support.
+             </LI>
+             <LI>Bugs 396-408 fixed (Refer to BugReports on Guiffy's web site for details)
+             </LI>
+            </UL>
+
+<h2>9.0 Release Notes: Build 268 - July 29, 2009</h2>
+             The 9.0 release includes:
+                  <UL>
+                    <LI><B>Folder Compare - Archive files:</B>
+                      <UL>
+                        <LI>Archive files (zip, tar, tgz, tbz2, jar, ear, war) 
+				can be compared with folders/file trees.  Archive files can be specified for folder
+				compares in the Folder Open panel, in all of Guiffy's command line interfaces,
+				and in the Guiffy API.
+                        </LI>
+                        <LI>Once an archive file is selected for a folder compare it is treated virtually just 
+				like a folder/file tree. The folder compare "explore" methods work for expanding/comparing
+ 				subfolders.  Launching a file compare with a double-click in the folder compare view 
+				works.  The folder compare synchronize operations such as copying or deleting files work.  
+				You can even edit a file in the file compare view and save it back to the archive file
+ 				(which is being managed like a virtual file tree).
+                        </LI>
+                        <LI>Archive files are treated like subfolders within a folder compare.  Archive files 
+				can be expanded/explored within a folder compare view.  During a filetree (recursive) 
+				compare, the archive files will be compared like subfolders.  And, archive files will 
+				be verified for matching/changed just like subfolders.
+                        </LI>
+                      </UL>
+                    </LI>
+
+                    <LI><B>Diff/Merge tool Syntax Highlighting:</B>
+                      <UL>
+                        <LI>File compare view syntax highlighting for over 20 syntax
+				types: (Assembler(x86), C, C++, C#, CSS, Fortran, Groovy, HTML, Java, JavaScript, 
+				JSP, Lua, Make, Perl, PHP, Properties, Python, Ruby, SAS, SQL, Tcl, Unix shell scripts, 
+				Windows Batch, XML).  The file types recognized for a supported syntax can be modified 
+				by the user.  Highlighting style options include: color, italics, and bold.  Syntax 
+				elements (each with their own style) include: Comments, Reserved words, Funtions, 
+				Literals, Data Types, Variables, Separators, Operators and Preprocessor). The style 
+				options for each syntax element can be modified by the user.  All the user option 
+				settings can be saved and applied in subsequent sessions.
+                        </LI>
+                        <LI>While editing within a file compare or merge view, syntax highlighting is updated
+				immediately.
+                        </LI>
+                      </UL>
+                    </LI>
+
+                    <LI><B>User defined keyboard shortcuts:</B>
+                      <UL>
+                        <LI>Keyboard Shortcuts for all of Guiffy's actions - menu items 
+				and merge buttons can be user defined (more than 80).  The user defined shortcuts can 
+				be saved and applied in subsequent sessions.
+                        </LI>
+                      </UL>
+                    </LI>
+
+                    <LI><B>SureMerge "under the hood" improvements from 8.6 (Build 262)</B>
+                      <UL>
+                        <LI>Bug reports 390-394 Refer to BugReports on Guiffy's web site for details).
+                        </LI>
+                        <LI>These SureMerge advancements result in auto merging correctly some ugly merge 
+                        cases that are NOT merged correctly by other 3-way merge tools.
+                        </LI>
+                      </UL>
+                    </LI>
+
+	              <LI><B>NetBeans plugin:</B>
+	                <UL>
+	                <LI>File compare, Folder compare, and Merge functions included.</LI>
+	                <LI>Integration with CVS and SVN included.
+                		<UL>
+				  <LI>Compare local version vs. CVS or SVN version.</LI>
+				  <LI>Replace file(s) with latest CVS or SVN version(s).</LI>
+                		</UL>
+                      </LI>
+	                <LI>Plugin uses Guiffy's API --- So, its faster than other Diff tool plugins
+	                    which execute external commands.</LI>
+	                <LI>Since the Guiffy plugin is Java based --- Its available
+	                    for all NetBeans platforms (not just Windows).</LI>
+	                </UL>
+                    </LI>
+
+                    <LI>Smoother screen shifts during merge operations/navigation
+                    </LI>
+
+                    <LI>Folder compare enhanced for files over 1GB
+                    </LI>
+
+                    <LI>New About dialog with license key path and scrolling credits window
+                    </LI>
+
+                    <LI>Added Dont Remind Me button to Support Expired dialog
+                    </LI>
+
+                    <LI>Installer upgraded - finds 1.6 JDK/JREs and works with the latest 64 bit platforms
+                    </LI>
+
+            	  <LI>Guiffy Inside API updated: Added methods for 9.0 features
+                    </LI>
+
+            	  <LI>Help updated: Added information for 9.0 features
+                    </LI>
+
+            	  <LI>Updated U.I. translations
+                    </LI>
+
+                  </UL>
+
+<h2>8.6 Release Notes: Build 256 - October 31, 2008</h2>
+             The 8.6 release includes:
+            <UL>
+            <LI><B>Diff tool Manual Alignment:</B>
+               <UL>
+               <LI>Edit -> Add Manual Alignment <BR>
+			Adds a manual alignment marker for the line of the current
+			cursor position. The alignment marker is indicated by "=" in
+			the gutter. For each pair of alignment markers added, the file
+			compare is reloaded.
+              <LI>Edit -> Clear All Manual Alignments <BR>
+			Clears all manual alignment markers and reloads file compare.
+              </UL>
+            <LI><B>Eclipse plug-in SVN support:</B>
+                <UL>
+                <LI>Added support for SVN(Subversive). 
+                	<UL>
+			<LI>Compare local version vs. CVS or SVN version.
+			<LI>Replace file(s) with latest CVS or SVN version(s).
+                	</UL>
+                </UL>
+            <LI><B>Diff/Merge tool and Folder Compare Anti-Aliasing:</B>
+                <UL>
+                <LI>File compare views and file/folder names in Folder compare views:<BR>
+			For improved compare view font rendering, use a 1.6 JRE with 
+			Guiffy 8.6 or later releases. Note: Guiffy font rendering on
+			MacOS X is improved (with anti-aliasing) on all JRE releases
+			and does not require Guiffy 8.6.
+                </UL>
+            <LI><B>Diff tool Copy/Replace + Next Change:</B>
+                <UL>
+                <LI>Edit -> Replace operation and then advance to next change. 
+			Alt+1 and Alt+2 hotkeys added.
+                </UL>
+            <LI>Improved diff alignment.
+            <LI>Help updated: Added information for 8.6 features and added Top 10 Tips.
+            <LI>Updated U.I. translations.
+            <LI>Bugs 387-389 fixed (Refer to BugReports on Guiffy's web site for details).
+            </UL>
+<br>
+
+<h2>8.4 Release Notes: Build 242 - March 24, 2008</h2>
+             The 8.4 release includes:
+            <UL>
+            <LI><B>Eclipse plugin:</B>
+                <UL>
+                <LI>File compare, Folder compare, and Merge functions included.
+                <LI>Compare with CVS included.
+                <LI>Eclipse 3.1, 3.2, and the latest 3.3 supported.
+                <LI>1.4.2_12, 1.5, and the latest 1.6 JDKs supported.
+                <LI>Plugin also tested and supported with Rational Application Developer.
+                <LI>Plugin uses Guiffy's API --- So, its faster than other Diff tool plugins
+                    which execute external commands.
+                <LI>Since the Guiffy plugin is Java based --- Its available
+                    for all Eclipse platforms (not just Windows).
+                </UL>
+            <LI><B>New "Hybrid" Minimum blocks of difference merge algorithm:</B>
+                <UL>
+                <LI>Improves alignment with XML and repeated code blocks. Detects inserts
+                    and deletes which would otherwise be marked as larger changes.
+                </UL>
+            <LI><B>Improved Minimum lines of difference compare algorithm:</B>
+                <UL>
+                <LI>Improves compare results when using Ignore options - reduces the differences
+                    found.
+                <LI>Improved compare view with Show Ignored differences selected - ignored
+                    differences within changes bifurcate the change block.
+                </UL>
+            <LI><B>Ignore Regular Expression Types:</B>
+                <UL>
+                <LI>Added types to support Ignore REs matching "Part" of a line and "Block"
+                    of lines (such as comments).
+                </UL>
+            <LI><B>Memory Meter toolbar gadget:</B>
+                <UL>
+                <LI>New optional toolbar gadget displays the maximum heap size, current heap
+                    size, and the highwater mark.
+                <LI>Increased the default maximum heap size from 128MB to 256MB.
+                </UL>
+            <LI><B>MacOS X improvements:</B>
+                <UL>
+                <LI>Open/Compare of .app file bundles - performs folder compare.
+                <LI>Fixed problem with file dialogs not opening in the current/last folder.
+                <LI>Fixed problem with copy/paste keyboard shortcuts.
+                <LI>Fixed problem with folder compare multiple file/folder selection.
+                </UL>
+            <LI>CLIs and APIs updated for support of 8.4 features.
+            <LI>Help updated: Added information for 8.4 features and 
+                corrected Integration notes for TortoiseSVN and Allfusion Harvest.
+            <LI>Updated U.I. translations
+            <LI>Bugs 380-383 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+
+<h2>8.2 Release Notes: Build 234 - September 10, 2007</h2>
+             The 8.2 release includes:
+            <UL> 
+            <LI><B>Folder Compare Show Option: Verify SubFolders Match:</B>
+                <UL>
+                <LI>When the folder compare view is not a recursive file tree compare, this
+                    option will verify and indicate whether the non-expanded subfolders
+                    contents match.
+                </UL>
+            <LI><B>MacOS X Improved File Dialogs:</B>
+                <UL>
+                <LI>With Finder Navigation Links for Network and Mounted drives.
+                </UL>
+            <LI>Options -&gt; UI Language (runtime).
+            <LI>Folder Compares show ignored differences (file/folder name (case),
+                size, date)..
+            <LI>Warning Dialog on Merge Save with Attentions unresolved.
+            <LI>Folder Compares upto 30% faster.
+            <LI>CLI &amp; API: Parent and Result folder path parameters added which are used
+                when launching a merge from a folder compare view.
+            <LI>SureMerge CLI &amp; API: Added EOL_AutoMode and Encoding_AutoMode.
+            <LI>API: Added setAllowPopup and setEditableH1/2/M property methods.
+            <LI>Help updated: Added information for 8.2 features and 
+                Added Integration notes for TortoiseSVN, Eclipse external diff plugin,
+                and Subclipse.
+            <LI>Updated U.I. translations
+            <LI>Bugs 364-379 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>8.0 Release Notes: Build 212 - March 5, 2007</h2>
+             The 8.0 release includes <B>several Major Enhancements:</B>
+            <UL>
+            <LI><B>Named Saved Settings:</B>
+				<UL>
+                <LI>Adds the capability to Save Settings as named file
+                <LI>And then, Load a named Saved Settings file.
+                <LI>Save Settings keeps current Named Settings updated.
+                <LI>Save As and Load dialogs include a history combo choicelist.
+                <LI>Named Settings added in Guiffy CLI and API.
+				</UL>   
+            <LI><B>Auto Encoding:</B>
+   				<UL>
+                <LI>New optional mode for Encoding options.
+                <LI>Detects Encoding format of 1st, 2nd, and parent files.
+                <LI>Then, uses the detected Encoding format when saving 1st or 2nd file.
+                <LI>1st file's Encoding format used for all other file saves.
+                <LI>Detection based on: 
+                    Byte Order Marks, XML Declaration encoding= attribute,
+                    or HTML meta charset= attribute.
+                <LI>User specified Encoding formats used when auto detection isn't possible.
+                <LI>Encoding options dialog shows detections.
+                <LI>Auto Encoding added in Guiffy CLI and API.
+               </UL>  
+            <LI><B>Auto EOL:</B>
+   				<UL>
+                <LI>New optional mode for Write EOL options.
+                <LI>Detects EOL format of 1st and 2nd files.
+                <LI>Then, uses the detected EOL format when saving 1st or 2nd file.
+                <LI>1st file's EOL format used for all other file saves.
+                <LI>EOL options dialog shows detections.
+                <LI>Auto EOL added in Guiffy CLI and API.
+				</UL>  
+            <LI><B>Show Ignored differences:</B>
+				<UL>
+                <LI>New option for file compare in Ignore options.
+                <LI>Shows ignored differences in 2nd file compare view.
+                <LI>Preserves 2nd file content while making an edited variant.
+                <LI>Show Ignored differences added in Guiffy CLI and API.
+				</UL>  
+            <LI><B>ClearCase Integration:</B>
+				<UL>
+				<LI>All NEW ClearCase type manager integration modules.
+				<LI>Java-based, uses Guiffy API, much faster than Perl implementation.
+                <LI>Easier to install/setup --- no compile required.
+                <LI>Cross-platform: Tested on Windows and Linux/Unix.
+                <LI>Supports Dynamic and Snapshot views.
+				</UL>  
+            <LI><B>Performance Improvements:</B>
+				<UL>
+				<LI>Streamlined GUI startup --- 52% faster.
+                <LI>Consolidated install down to 2 jars --- Guiffy.jar and JavaHelp (jh.jar).
+				<LI>8.0 on Java 6, file compares performed from command line - <B>2X <i>F-A-S-T-E-R</i> !!</B>
+				</UL>
+            <LI><B>Windows Vista Support:</B>
+				<UL>
+				<LI>With latest InstallAnywhere (8.0) install packaging.
+                <LI>With updated shell extension for Explorer context menus.
+                <LI>With 1.6 or 1.5 JREs.
+                <LI>Looks good - Vista Look and Feel.
+				</UL>  
+            <LI><B>Java 6 Support:</B>
+				<UL>
+				<LI>We tested Guiffy 7.x and 8.0 on Java 1.6.0 for
+    				months (ever since 1.6.0 was available for beta testing) - NO PROBLEM.
+                    Java 6 is faster and
+                    it supports Windows Vista.
+                <LI>Download packages for Windows and Linux with a JRE include the international 1.6 JRE.
+				</UL> 
+            <LI>Additional DragNDrop support:
+                <UL>
+                <LI>Files can be dragged and dropped onto the file compare view
+                    text areas.
+                <LI>Drop selects the file in the Open Files Panel. Then, either
+                    click on Compare, or drag and drop another file 
+                    onto its field in the Open Files Panel.
+                </UL>
+            <LI>Improved browser launcher - for license key requests ( Evaluation / Buy / Annual Subscription ) and OnLine Support.
+				<UL>
+				<LI>Works on MacOS (9 or X) - default browser
+				<LI>Works on Linux/Unix/"Others" - Firefox, Mozilla, Netscape, Konqueror, or Opera
+				<LI>Works on Windows - default browser
+				</UL> 
+            <LI>Compare Report (HTML) Preview/Print launches the browser
+                <UL>
+                <LI>Eliminated usage of WebWindow component.
+                <LI>Faster, lighter, less memory required, etc.
+                </UL>
+            <LI>Updated U.I. translations
+            <LI>Bugs 360-363 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>7.4 Release Notes: Build 198 - September 25, 2006</h2>
+             The 7.4 release includes:
+            <UL> 
+            <LI>Folder Compare options: Ignore All Except Files &amp; FileTypes<BR>
+                 ( Only compare these files and/or these filetypes. )
+            <LI>Style Attributes for Line Numbers &amp; Fillers --- Fonts, Foreground &amp;
+                 Background colors.  In compare views and compare (HTML) reports.
+            <LI>Desktop integrations: Windows Explorer, MacOS X Finder, 
+                 &amp; Linux KDE (Context Menus).  Select files/folders and run Guiffy from
+                 your desktop.
+            <LI>Encoding Choice Lists
+            <LI>Folder Compare option: Ignore Symbolic Links
+            <LI>Close Window (Cmd-W for MacOS X)
+            <LI>Help improvements: Added keyboard shortcuts cheat sheet, Added
+                Desktop integration notes and 
+                Added Integration notes for MKS Integrity and AccuRev.
+            <LI>Updated U.I. translations
+            <LI>Bugs 351-359 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>7.3 Release Notes: Build 188 - May 8, 2006</h2>
+             The 7.3 release includes:
+            <UL> 
+            <LI>NEW Ignore Whitespace types: Leading, Embedded, &amp; Trailing.
+            <LI>Find in 1st | 2nd view indicators in the dialog and menu.
+            <LI>Disallow Editing CLI -ge1|ge2 options.
+            <LI>Circular link detections during file tree compare on Unix/Linux.
+            <LI>MacOS X Installer setup improved to select the latest JRE.
+            <LI>Help buttons added for context sensitive help in File Compare Show,
+                Folder Compare Show, and FileTypes dialogs.
+            <LI>DragNDrop into file/folder open panels user interface improved.
+            <LI>Startup 12-20% <i>faster</i>.
+            <LI>Installer improvements for the latest Suse, Redhat, Fedora, Solaris,
+                and MacOS X distributions.
+            <LI>Readied for Java 1.6 beta testing.
+            <LI>CLI -duser.home= for Windows installs with Redirected Desktops.
+            <LI>Help improvements: Added information for Uninstall/Update/Upgrade and 
+                Added Integration note for Visual Studio Team Foundation Server.
+            <LI>Updated U.I. translations
+            <LI>Bugs 345-350 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>7.2 Release Notes: Build 179 - February 20, 2006</h2>
+             The 7.2 release includes:
+            <UL> 
+            <LI>NEW Compare Report (as HTML) engine API --- Non-GUI, MUCH faster with less memory
+                 required.
+            <LI>Separate Encoding parameters for 1st, 2nd, and Parent files.  Supported
+                 throughout product set - GUI application, command line intefaces,
+                 and API package.
+            <LI>API Enhancements: setWriter for 1st and 2nd files, setAllowEditing for 1st and 2nd files,
+                and improved Save and SaveAs Actions for 1st and 2nd files.
+            <LI>Faster launcher on Windows.
+            <LI>Find operates from current cursor position (rather than last find position).
+            <LI>Installer enhancements and bug fixes: Silent mode support, Windows DEP issue
+                 resolved and updated platform/JRE support.
+            <LI>Updated U.I. translations
+            <LI>Bugs 334-344 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>7.0 Release Notes: Build 165 - May 9, 2005</h2>
+             The 7.0 release includes <B>several Major Enhancements:</B>
+            <UL> 
+            <LI><B>New Toolbars/Icons/Style &amp; Logo:</B>
+				<UL>
+				<LI>NEW fresh toolbar buttons (Incors-based icons). <BR>
+				<LI>NEW Logo. <BR>3 diff &lt;> 
+                    symbols makeup our new logo.  Symbolic of our advanced,
+                    trustworthy 3-way merge and blended implemenation of 3 
+                    compare algorithms.  You can also see a box framework image - some folks
+                    call it the Guiffy "Orb" ;-))
+				<LI>Look-and-Feel toolbar separators.
+				<LI>New 2005 (Crystal) Style - White background with
+					brighter scroll meters and Blue-on-Orange Select.
+				</UL> 
+            <LI><B>Edit user interface improvements:</B>
+				<UL>
+				<LI>Select, Copy, Paste, Cut(as Removed) Exclude gutters.
+                <LI>Mark as "Removed" enhanced to toggle - "Remove/Restore".
+                <LI>Undo (Compound Edits) - Paste, Replace Change from 2nd in 1st,
+					and Replace Change from 1st in 2nd.
+				<LI>Undo stack NOT updated for operations with their own builtin
+					(at any time, in any order) undo: Merge Keep/Undo, Cut, Mark, and Flip.
+				</UL> 
+            <LI><B>PVCS integration:</B> 
+				<UL>
+				<LI>PVCS integration support - plugin Guiffy as diff/merge tool.
+					PVCS customers have been asking us to find a way to integrate
+                    with PVCS so they could have a better diff/merge.  PVCS does
+                    NOT have an interface for external diff/merge tools.  But,
+                    "Where there's a will, there's a way...". See our
+              PVCS 
+					 Help document
+                    for further information.
+				</UL> 
+            <LI><B>Extended Diff/Merge context popup menus:</B><BR>
+            <LI><B>DragnDrop in File/Folder Open Panels:</B> 
+				<UL>
+				<LI>Drag a file/folder from Windows Explorer(for example) and
+                    drop it in one of the file/folder name fields of the Open Combo Panels.
+				</UL> 
+            <LI><B>HTML Reports - Save, Print &amp; Preview:</B> 
+				<UL>
+				<LI>New File/Folder Compare reports - single file, supporting
+     				all the Guiffy style properties.
+				</UL> 
+            <LI><B>Java 5 Support:</B>
+				<UL>
+				<LI>We tested Guiffy 6.x and 7.0 on Java 1.5.0 and 1.5.0_01 for
+    				months (ever since 1.5.0 was available for beta testing) - NO PROBLEM.
+                    Java 5 startup is faster and requires less memory.  And,
+                    it comes with a new Look-and-Feel (Ocean).
+				</UL> 
+            <LI><B>Unicode file/folder names support:</B> 
+				<UL>
+				<LI>If you have Unicode file/folder names in your local or remote file
+               		systems or find them in a floppy, CD, etc. --- no problem, just select
+                    a Unicode font and your file/folder names will be displayed properly
+                    in the folder compare views and all of Guiffy's file/folder dialogs.
+				</UL> 
+            <LI>Bugs 322-333 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>6.5 Release Notes: Build 144 - December 15, 2004</h2>
+The 6.5 release includes:
+            <UL> 
+            <LI><B>Direct(clickon) current block navigation...</B>
+				<UL>
+				<LI>Clickon the text within a change block and the logical
+                  current block is set to that change.
+				</UL> 
+            <LI>Next/Previous "Wrapping" confirm dialog: 
+				While navigating with Next/Previous change or attention
+                    a confirm dialog is diaplayed before wrapping.
+            <LI>Forked file compare window saved settings for location and size added
+            <LI>Updated Encoding Help 
+            <LI>Bugs 318-321 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+
+<br>
+<h2>6.4 Release Notes: Build 141 - October 18, 2004</h2>
+The 6.4 release includes:
+           <UL>
+            <LI><B>Folded Compare/Merge views...</B>
+				<UL>
+				<LI>Guiffy's default display mode for compare/merge results is
+                  to Show everything - the matching lines and the differences 
+                  for file sizes upto 400KB. For files > 400KB, the
+                  differences are displayed within 8 lines of context which
+                  we call Folded Compare/Merge Views.
+                 <LI>Folded Compare/Merge Views improve the compare viewing
+                  response time --- up to 10X faster for large files with just
+                  a few differences.
+                 <LI>And, Folded Compare/Merge Views reduce the memory requirements
+                  --- enabling compare/merges of MUCH larger files.
+                 <LI>See the Options->Show dialog for controlling the file size
+                  threshold for folded views.
+                 <LI>Double clicking on a "Folded" indicator line will open 
+                   another window with the content of the matching block. If 
+                  needed you can select, edit and copy text from the
+                  matching view. 
+                  <LI>Save 1st/2nd As and Save Merge File operations include
+                  the matching lines of text from folded blocks in their saved
+                  results.  
+				</UL> 
+            <LI>Parent file dialog smarter defaults: 
+			The Open Parent file dialog defaults to the last Parent file
+                    opened path and the current 1st file name.
+		<LI>Save 1st/2nd file dialogs remember last path. 
+            <LI>Bugs 305-317 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>6.2 Release Notes: Build 135 - July 26, 2004</h2>
+The 6.2 release includes:
+            <UL> 
+            <LI><B>Parent File Attention Viewer</B>
+				<UL>
+				<LI>DoubleClick in the merge text of the result view opens another
+                    Window with a view of the Parent File content for the current
+                    merge block.
+				</UL> 
+            <LI><B>Tools -> Keep/Undo All...</B>
+				<UL>
+				<LI>You can begin your merge based upon keeping the contents of the first, second, or
+                    Both files.  Or, to start over again, you can Undo All your keep selections.  These
+                    operations are selected in Tools -> Keep/Undo All...
+				</UL> 
+            <LI>Font options...New All Text selection 
+            <LI>-gs disallows Merge Saves until finished: 
+				Command Line interface -gs option added to disallow
+                    Merge Saves until all Attentions are resolved.
+                    API GuiffyFrame method setAllowSaves added.
+            <LI>Examples added in Folders Ignore dialog 
+            <LI>Bugs 300-304 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>6.1 Release Notes: Build 123 - April 19, 2004</h2>
+The 6.1 release includes:
+            <UL> 
+            <LI><B>Reduced Memory</B> requirements: 
+				Heap High Water Mark reduced 30%.  Heap Used (High Water Mark - Freed) reduced 30%.
+            <LI><B>Doubled File Size</B> compare/merge multi-MB files
+				<UL>
+				<LI>For Guiffy 6.0, the default 128MB max. heap size would usually compare files
+                    up to about 100K lines (3.5MB).  Guiffy 6.1 will usually compare files up to about
+                    200K lines (7MB).  Allow about 35% more heap space for 3-way merges.
+				</UL> 
+            <LI><B>Upto 38% FASTER</B> file compare/merges 18-38% faster 
+            <LI>Optimized Startup - 15% quicker GUI startups 
+            <LI>File compare views auto-navigate to the first difference
+            <LI>Improved the file/folder headers LAF
+            <LI>Bugs 291-299 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+<h2>6.0 Release Notes: Build 112 - March 2, 2004</h2>
+             The 6.0 release includes <B>several Major Enhancements:</B>
+            <UL> 
+            <LI><B>FileTree details</B> Size and Date 
+				<UL>
+				<LI>Options -> Folder Compare Show Details displays the File Size and
+                    Modified Date in the FileTree compare view.
+				</UL>
+            <LI><B>FileTree Style</B> Backgrounds and Fonts 
+				<UL>
+				<LI>Plus, Native Look-and-Feel icons
+				</UL>
+            <LI><B>"Explore"</B> FileTrees with [+] / [-] 
+				<UL>
+				<LI>OR, select Folder Compare Show SubFolders (Recursively) option
+                    to perform a complete FileTree compare.
+				</UL>
+            <LI>File Tree view <B>Performance Improvements</B> 
+				<UL>
+				<LI>TreeView creates 300%+ faster
+				<LI>Immediate resizes
+                <LI>MUCH quicker option and view split changes
+				</UL>
+            <LI>Folder compare <B>Logical navigation</B> tools 
+				<UL>
+				<LI>Use clickable scroll meters to go to a block of file differences
+				<LI>Or, the choicelist to select a block of file differences
+				<LI>Or, Next/Previous to browse the blocks of file differences
+				</UL>
+            <LI><B>Copy/Delete operations dynamically update views</B> 
+            <LI><B>Ignore Files/SubFolders with * wildcards</B> 
+            <LI><B>NEW default "Plexi"</B> style for 2004 
+            <LI><B>NEW Options -> Reset</B> to defaults 
+            <LI>Bugs 283-290 fixed (Refer to BugReports on Guiffy's web site for details)
+            </UL>
+<br>
+
+Documentation by <a href="http://www.guiffy.com/" TARGET=_blank>
+Guiffy Software, Inc.</a> 2011
+</body></html>
